@@ -1,0 +1,28 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+<!-- Setter Injection -->
+
+	<bean id="helloBean" class="com.chandruvv.common.HelloWorld"
+	init-method="initmethod" destroy-method="destroymethod" scope="prototype">
+		<property  name="name" value="chandru" />
+		<property name="age" value="33"/>
+	</bean>
+	
+	<!--  Constructor injection -->
+	<bean id="conbean" class="com.chandruvv.common.HelloWorld" scope="singleton">
+	  <constructor-arg index="0" type="java.lang.String" value="convalue">
+	  </constructor-arg>
+	</bean>
+	
+	<bean id="conbean1" class="com.chandruvv.common.HelloWorld">
+	 <constructor-arg  index="0" type="int" value="33"/>
+	 <constructor-arg index="1" type="java.lang.String" value="secondcon"/>
+	</bean>
+	
+	
+	
+	
+</beans>
